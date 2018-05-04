@@ -46,13 +46,14 @@ download_process_spam <- function(output_dir = "./output", layer = "physical-are
                      crop_system = stringr::str_to_title(sapply(V4, tail, 1))) %>% 
     dplyr::bind_cols(spam_input, .)
   
-  # Compute SPAM total production 
-  cat("\nComputing SPAM total production from raster files\n")
+  # Compute SPAM totals 
+  cat("\nComputing SPAM totals from raster files\n")
   spam_input <- spam_input %>% 
-    dplyr::mutate(production = purrr::map_dbl(.x = .$file, .f = raster_cellStats_progress, .pb = dplyr::progress_estimated(length(.$file)), stat = 'sum', na.rm = TRUE)) %>% 
+    dplyr::mutate(value = purrr::map_dbl(.x = .$file, .f = raster_cellStats_progress, 
+                                              .pb = dplyr::progress_estimated(length(.$file)), stat = 'sum', na.rm = TRUE)) %>% 
     dplyr::group_by(crop_system) %>% 
-    dplyr::arrange(desc(production)) %>% 
-    dplyr::mutate(acc.p = cumsum(production) / sum(production))
+    dplyr::arrange(desc(value)) %>% 
+    dplyr::mutate(acc.p = cumsum(value) / sum(value))
   
   return(spam_input)
   

@@ -1,0 +1,254 @@
+ID,Continent,Region
+Afghanistan,ASI,Rest of Asia
+Albania,EUR,Rest of Europe
+Algeria,AFR,Rest of Africa
+American Samoa,OCE,Rest of Asia
+Andorra,EUR,Rest of Europe
+Angola,AFR,Rest of Africa
+Anguilla,LAM,Rest of Latin America
+Antarctica,ANT,NA
+Antigua,LAM,Rest of Latin America
+Argentina,LAM,Rest of Latin America
+Armenia,ASI,Rest of Asia
+Aruba,LAM,Rest of Latin America
+Ascension Island,LAM,Rest of Latin America
+Australia,OCE,Australia
+Austria,EU,European Union
+Azerbaijan,ASI,Rest of Asia
+Azores,EUR,Rest of Europe
+Bahamas,LAM,Rest of Latin America
+Bahrain,ASI,Rest of Asia
+Bangladesh,ASI,Rest of Asia
+Barbados,LAM,Rest of Latin America
+Barbuda,LAM,Rest of Latin America
+Belarus,EUR,Rest of Europe
+Belgium,EU,European Union
+Belize,LAM,Rest of Latin America
+Benin,AFR,Rest of Africa
+Bermuda,LAM,Rest of Latin America
+Bhutan,ASI,Rest of Asia
+Bolivia,LAM,Rest of Latin America
+Bonaire,LAM,Rest of Latin America
+Bosnia and Herzegovina,EUR,Rest of Europe
+Botswana,AFR,Rest of Africa
+Brazil,LAM,Brazil
+Brunei,ASI,Rest of Asia
+Bulgaria,EU,European Union
+Burkina Faso,AFR,Rest of Africa
+Burundi,AFR,Rest of Africa
+Cambodia,ASI,Rest of Asia
+Cameroon,AFR,Rest of Africa
+Canada,NAM,Canada
+Canary Islands,EUR,Rest of Europe
+Cape Verde,AFR,Rest of Africa
+Cayman Islands,LAM,Rest of Latin America
+Central African Republic,AFR,Rest of Africa
+Chad,AFR,Rest of Africa
+Chagos Archipelago,ASI,Rest of Asia
+Chile,LAM,Rest of Latin America
+China,ASI,China
+Christmas Island,ASI,Rest of Asia
+Cocos Islands,ASI,Rest of Asia
+Colombia,LAM,Rest of Latin America
+Comoros,AFR,Rest of Africa
+Cook Islands,OCE,Rest of Asia
+Costa Rica,LAM,Rest of Latin America
+Croatia,EU,European Union
+Cuba,LAM,Rest of Latin America
+Curacao,LAM,Rest of Latin America
+Cyprus,EU,European Union
+Czech Republic,EU,European Union
+Democratic Republic of the Congo,AFR,Rest of Africa
+Denmark,EU,European Union
+Djibouti,AFR,Rest of Africa
+Dominica,LAM,Rest of Latin America
+Dominican Republic,LAM,Rest of Latin America
+Ecuador,LAM,Rest of Latin America
+Egypt,RME,Rest of Middle East
+El Salvador,LAM,Rest of Latin America
+Equatorial Guinea,AFR,Rest of Africa
+Eritrea,AFR,Rest of Africa
+Estonia,EU,European Union
+Ethiopia,AFR,Rest of Africa
+Falkland Islands,LAM,Rest of Latin America
+Faroe Islands,EUR,Rest of Europe
+Fiji,OCE,Rest of Asia
+Finland,EU,European Union
+France,EU,European Union
+French Guiana,LAM,Rest of Latin America
+French Polynesia,OCE,Rest of Asia
+French Southern and Antarctic Lands,ANT,NA
+Gabon,AFR,Rest of Africa
+Gambia,AFR,Rest of Africa
+Georgia,ASI,Rest of Asia
+Germany,EU,European Union
+Ghana,AFR,Rest of Africa
+Greece,EU,European Union
+Greenland,EUR,Rest of Europe
+Grenada,LAM,Rest of Latin America
+Grenadines,LAM,Rest of Latin America
+Guadeloupe,LAM,Rest of Latin America
+Guam,ASI,Rest of Asia
+Guatemala,LAM,Rest of Latin America
+Guernsey,EUR,Rest of Europe
+Guinea,AFR,Rest of Africa
+Guinea-Bissau,AFR,Rest of Africa
+Guyana,LAM,Rest of Latin America
+Haiti,LAM,Rest of Latin America
+Heard Island,ANT,NA
+Honduras,LAM,Rest of Latin America
+Hungary,EU,European Union
+Iceland,EUR,Rest of Europe
+India,ASI,India
+Indonesia,ASI,Indonesia
+Iran,RME,Rest of Middle East
+Iraq,RME,Rest of Middle East
+Ireland,EU,European Union
+Isle of Man,EUR,Rest of Europe
+Israel,RME,Rest of Middle East
+Italy,EU,European Union
+Ivory Coast,AFR,Rest of Africa
+Jamaica,LAM,Rest of Latin America
+Japan,ASI,Japan
+Jersey,EUR,Rest of Europe
+Jordan,RME,Rest of Middle East
+Kazakhstan,ASI,Rest of Asia
+Kenya,AFR,Rest of Africa
+Kiribati,OCE,Rest of Asia
+Kosovo,EUR,Rest of Europe
+Kuwait,RME,Rest of Middle East
+Kyrgyzstan,ASI,Rest of Asia
+Laos,ASI,Rest of Asia
+Latvia,EU,European Union
+Lebanon,RME,Rest of Middle East
+Lesotho,AFR,Rest of Africa
+Liberia,AFR,Rest of Africa
+Libya,AFR,Rest of Africa
+Liechtenstein,EUR,Rest of Europe
+Lithuania,EU,European Union
+Luxembourg,EU,European Union
+Macedonia,EUR,Rest of Europe
+Madagascar,AFR,Rest of Africa
+Madeira Islands,EUR,Rest of Europe
+Malawi,AFR,Rest of Africa
+Malaysia,ASI,Rest of Asia
+Maldives,ASI,Rest of Asia
+Mali,AFR,Rest of Africa
+Malta,EU,European Union
+Marshall Islands,ASI,Rest of Asia
+Martinique,LAM,Rest of Latin America
+Mauritania,AFR,Rest of Africa
+Mauritius,AFR,Rest of Africa
+Mayotte,AFR,Rest of Africa
+Mexico,LAM,Mexico
+Micronesia,ASI,Rest of Asia
+Moldova,EUR,Rest of Europe
+Monaco,EUR,Rest of Europe
+Mongolia,ASI,Rest of Asia
+Montenegro,EUR,Rest of Europe
+Montserrat,EUR,Rest of Europe
+Morocco,AFR,Rest of Africa
+Mozambique,AFR,Rest of Africa
+Myanmar,ASI,Rest of Asia
+Namibia,AFR,Rest of Africa
+Nauru,ASI,Rest of Asia
+Nepal,ASI,Rest of Asia
+Netherlands,EU,European Union
+Nevis,LAM,Rest of Latin America
+New Caledonia,OCE,Rest of Asia
+New Zealand,OCE,Rest of Asia
+Nicaragua,LAM,Rest of Latin America
+Niger,AFR,Rest of Africa
+Nigeria,AFR,Rest of Africa
+Niue,OCE,Rest of Asia
+Norfolk Island,OCE,Rest of Asia
+North Korea,ASI,Rest of Asia
+Northern Mariana Islands,ASI,Rest of Asia
+Norway,EUR,Rest of Europe
+Oman,ASI,Rest of Asia
+Pakistan,ASI,Rest of Asia
+Palau,OCE,Rest of Asia
+Palestine,ASI,Rest of Asia
+Panama,LAM,Rest of Latin America
+Papua New Guinea,OCE,Rest of Asia
+Paraguay,LAM,Rest of Latin America
+Peru,LAM,Rest of Latin America
+Philippines,ASI,Rest of Asia
+Pitcairn Islands,OCE,Rest of Asia
+Poland,EU,European Union
+Portugal,EU,European Union
+Puerto Rico,LAM,Rest of Latin America
+Qatar,ASI,Rest of Asia
+Republic of Congo,AFR,Rest of Africa
+Reunion,AFR,Rest of Africa
+Romania,EU,European Union
+Russia,ASI,Russia
+Rwanda,AFR,Rest of Africa
+Saba,LAM,Rest of Latin America
+Saint Barthelemy,LAM,Rest of Latin America
+Saint Helena,AFR,Rest of Africa
+Saint Kitts,LAM,Rest of Latin America
+Saint Lucia,LAM,Rest of Latin America
+Saint Martin,LAM,Rest of Latin America
+Saint Pierre and Miquelon,NAM,NA
+Saint Vincent,LAM,Rest of Latin America
+Samoa,OCE,Rest of Asia
+San Marino,EUR,Rest of Europe
+Sao Tome and Principe,AFR,Rest of Africa
+Saudi Arabia,RME,Rest of Middle East
+Senegal,AFR,Rest of Africa
+Serbia,EUR,Rest of Europe
+Seychelles,AFR,Rest of Africa
+Siachen Glacier,ASI,Rest of Asia
+Sierra Leone,AFR,Rest of Africa
+Singapore,ASI,Rest of Asia
+Sint Eustatius,LAM,Rest of Latin America
+Sint Maarten,LAM,Rest of Latin America
+Slovakia,EU,European Union
+Slovenia,EU,European Union
+Solomon Islands,OCE,Rest of Asia
+Somalia,AFR,Rest of Africa
+South Africa,AFR,South Africa
+South Georgia,LAM,Rest of Latin America
+South Korea,ASI,Rest of Asia
+South Sandwich Islands,LAM,Rest of Latin America
+South Sudan,AFR,Rest of Africa
+Spain,EU,European Union
+Sri Lanka,ASI,Rest of Asia
+Sudan,AFR,Rest of Africa
+Suriname,LAM,Rest of Latin America
+Swaziland,AFR,Rest of Africa
+Sweden,EU,European Union
+Switzerland,EUR,Rest of Europe
+Syria,ASI,Rest of Asia
+Taiwan,ASI,Rest of Asia
+Tajikistan,ASI,Rest of Asia
+Tanzania,AFR,Rest of Africa
+Thailand,ASI,Rest of Asia
+Timor-Leste,ASI,Rest of Asia
+Tobago,LAM,Rest of Latin America
+Togo,AFR,Rest of Africa
+Tonga,OCE,Rest of Asia
+Trinidad,LAM,Rest of Latin America
+Tunisia,AFR,Rest of Africa
+Turkey,EUR,Turkey
+Turkmenistan,ASI,Rest of Asia
+Turks and Caicos Islands,LAM,Rest of Latin America
+Uganda,AFR,Rest of Africa
+UK,EU,European Union
+Ukraine,EUR,Rest of Europe
+United Arab Emirates,RME,Rest of Middle East
+Uruguay,LAM,Rest of Latin America
+USA,NAM,United States
+Uzbekistan,ASI,Rest of Asia
+Vanuatu,OCE,Rest of Asia
+Vatican,EUR,Rest of Europe
+Venezuela,LAM,Rest of Latin America
+Vietnam,ASI,Rest of Asia
+"Virgin Islands, British",LAM,Rest of Latin America
+"Virgin Islands, US",LAM,Rest of Latin America
+Wallis and Futuna,OCE,Rest of Asia
+Western Sahara,AFR,Rest of Africa
+Yemen,RME,Rest of Middle East
+Zambia,AFR,Rest of Africa
+Zimbabwe,AFR,Rest of Africa

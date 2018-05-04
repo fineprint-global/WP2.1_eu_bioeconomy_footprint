@@ -1,0 +1,43 @@
+spam_crop,Item,Group
+Wheat,Wheat,alc
+Maize,Maize,alc
+Rice,Rice,alc
+Soybean,Oil crops (primary),oil
+Barley,Other cereals,alc
+Vegetable,"Fruit, vegetables, spices",alc
+Sorghum,Other cereals,alc
+Cotton,Other industrial crops,ind
+Cereals Other,Other cereals,alc
+Rapeseed,Oil crops (primary),oil
+Millet Pearl,Other cereals,alc
+Bean,Roots & Pulses,alc
+Fruit Tropical,"Fruit, vegetables, spices",alc
+Rest Of Crops,Rubber,ind
+Fruit Temperate,"Fruit, vegetables, spices",alc
+Sunflower,Oil crops (primary),oil
+Groundnut,Oil crops (primary),oil
+Sugar Cane,Sugar crops (primary),alc
+Potato,Roots & Pulses,alc
+Cassava,Roots & Pulses,alc
+Oil Crops Other,Oil crops (primary),oil
+Pulses Other,Roots & Pulses,alc
+Oil Palm,Oil crops (primary),oil
+Coconut,Oil crops (primary),oil
+Chickpea,Roots & Pulses,alc
+Cowpea,Roots & Pulses,alc
+Cocoa,Stimulants,nec
+Sweet Potato,Roots & Pulses,alc
+Sesame Seed,Oil crops (primary),oil
+Coffee Arabica,Stimulants,nec
+Sugar Beet,Sugar crops (primary),alc
+Millet Small,Other cereals,alc
+Coffee Robusta,Stimulants,nec
+Banana,"Fruit, vegetables, spices",alc
+Yam,Roots & Pulses,alc
+Pigeonpea,Roots & Pulses,alc
+Plantain,"Fruit, vegetables, spices",alc
+Tobacco,Tobacco,ind
+Lentil,Roots & Pulses,alc
+Fibers Other,Other industrial crops,ind
+Tea,Stimulants,nec
+Roots And Tubers Other,Roots & Pulses,alc
