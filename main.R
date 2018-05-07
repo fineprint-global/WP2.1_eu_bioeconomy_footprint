@@ -1,6 +1,7 @@
 library(tidyverse)
 library(magrittr)
-library(sf)   # Install from GitHub: library(devtools); devtools::install_github("rstats-db/DBI"); devtools::install_github("r-spatial/sf")
+library(sf)    # Install from GitHub: library(devtools); devtools::install_github("rstats-db/DBI"); devtools::install_github("r-spatial/sf")
+library(stars) # Install from GitHub: library(devtools); devtools::install_github("r-spatial/stars")
 library(raster)
 library(maps)
 library(maptools)
@@ -19,7 +20,7 @@ country_list <- readr::read_csv("./input/country_conconrdance.csv")
 
 # Tidy data 
 data %<>% 
-  tidyr::gather(Region, Area, -Item, -Group)
+  tidyr::gather(Region, total_footprint, -Item, -Group)
 
 # Tidy regions
 regions %<>% 
@@ -52,35 +53,59 @@ spam_stack$total <- lapply(spam_stack$stack, FUN = function(x) sum(x, na.rm = TR
 world_map %<>% 
   dplyr::left_join(country_list, by = c("ID" = "ID"))
 
-# Join data and world map 
+# Group world map regions 
 region_map <- world_map %>% 
   dplyr::select(-ID, -Continent) %>% 
   dplyr::filter(!is.na(Region)) %>% 
   dplyr::group_by(Region) %>% 
   dplyr::summarise()
 
-# Compute region total 
+# Comput total SPAM by region and group 
 spam_total_stack <- raster::stack(spam_stack$total)
 names(spam_total_stack) <- spam_stack$Group
-spam_total <- raster::extract(x = spam_total_stack, y = as(region_map, "Spatial"), sp = TRUE, fun = sum)
+region_map %<>% 
+  raster::extract(x = spam_total_stack, y = ., df = TRUE, fun = sum) %>% 
+  tibble::as_tibble() %>% 
+  dplyr::select(-ID) %>% 
+  dplyr::bind_cols(region_map, .) %>% 
+  tidyr::gather(Group, total_spam, -Region, -geometry) %>% 
+  dplyr::filter(Group %in% c("alc", "oil", "ind")) 
 
-
-
+# Compute total Footprint by regional and group 
 region_map <- data %>% 
   dplyr::select(-Item) %>% 
   dplyr::group_by(Region, Group) %>% 
-  dplyr::summarise(Area = sum(Area, na.rm = TRUE)) %>% 
+  dplyr::summarise(total_footprint = sum(total_footprint, na.rm = TRUE)) %>% 
   dplyr::filter(Group %in% c("alc", "oil", "ind")) %>% 
-  dplyr::right_join(region_map, by = c("Region" = "Region")) %>% 
+  dplyr::right_join(region_map, by = c("Region" = "Region", "Group" = "Group")) %>% 
   dplyr::ungroup() %>% 
   sf::st_as_sf()
 
+# Compute scale factor between footprint and SPAM area by region and group 
+region_map %<>% 
+  dplyr::mutate(scale = total_footprint / total_spam)
 
-# Join SPAM stack and world map 
+# Downscale footprint area to SPAM cells 
 region_map %<>% 
   dplyr::left_join(spam_stack, by = c("Group" = "Group")) %>% 
-  dplyr::select(-stack)
+  dplyr::select(-stack, raster_spam = total) %>% 
+  dplyr::rowwise() %>% 
+  dplyr::mutate(mask = mask_regions(x = raster_spam, y = geometry, crs = sf::st_crs(region_map)), raster_footprint = list(mask * scale))
 
+# Mosaic footprint raster by group
+spatial_footprint <- region_map %>% 
+  dplyr::select(Group, raster_footprint, geometry) %>% 
+  dplyr::group_by(Group) %>% 
+  dplyr::summarise(footprint_mosaic = list(sum(raster::stack(raster_footprint), na.rm = TRUE))) 
+  
+
+# Save spatial footprint to file 
+spatial_footprint_stack <- raster::stack(spatial_footprint$footprint_mosaic)
+names(spatial_footprint_stack) <- spatial_footprint$Group
+raster::writeRaster(spatial_footprint_stack, filename = "./output/spatial_footprint_stack.tif", overwrite = TRUE)
+
+# PLOT TODO 
+# plot(spatial_footprint_stack, col = RColorBrewer::brewer.pal(n = 9, name = 'YlOrRd'))
 
 
 
