@@ -93,11 +93,19 @@ region_map %<>%
   dplyr::mutate(mask = mask_regions(x = raster_spam, y = geometry, crs = sf::st_crs(region_map)), raster_footprint = list(mask * scale))
 
 # Mosaic footprint raster by group
-spatial_footprint_map <- region_map %>% 
+spatial_footprint <- region_map %>% 
   dplyr::select(Group, raster_footprint, geometry) %>% 
   dplyr::group_by(Group) %>% 
-  dplyr::summarise(footprint_mosaic = list(sum(raster::stack(raster_footprint), na.rm = TRUE)))
+  dplyr::summarise(footprint_mosaic = list(sum(raster::stack(raster_footprint), na.rm = TRUE))) 
+  
 
+# Save spatial footprint to file 
+spatial_footprint_stack <- raster::stack(spatial_footprint$footprint_mosaic)
+names(spatial_footprint_stack) <- spatial_footprint$Group
+raster::writeRaster(spatial_footprint_stack, filename = "./output/spatial_footprint_stack.tif", overwrite = TRUE)
+
+# PLOT TODO 
+# plot(spatial_footprint_stack, col = RColorBrewer::brewer.pal(n = 9, name = 'YlOrRd'))
 
 
 
