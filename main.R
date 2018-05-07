@@ -5,6 +5,7 @@ library(raster)
 library(maps)
 library(maptools)
 library(rgeos)
+rasterOptions(progress = "text")
 
 # Load functions 
 sources_files <- list.files(path = "./R", pattern = "*.R", full.names = TRUE)
@@ -58,6 +59,13 @@ region_map <- world_map %>%
   dplyr::group_by(Region) %>% 
   dplyr::summarise()
 
+# Compute region total 
+spam_total_stack <- raster::stack(spam_stack$total)
+names(spam_total_stack) <- spam_stack$Group
+spam_total <- raster::extract(x = spam_total_stack, y = as(region_map, "Spatial"), sp = TRUE, fun = sum)
+
+
+
 region_map <- data %>% 
   dplyr::select(-Item) %>% 
   dplyr::group_by(Region, Group) %>% 
@@ -67,37 +75,11 @@ region_map <- data %>%
   dplyr::ungroup() %>% 
   sf::st_as_sf()
 
-region_map %>% 
-  dplyr::filter(Group == "oil") %>% 
-  dplyr::select(Area) %>% 
-  plot()
 
-
-data %>% 
-  dplyr::filter(Group == "oil") %>% 
-  dplyr::group_by(Region) %>% 
-  dplyr::summarise(Area = sum(Area))
-
-world_map %>% dplyr::group_by(Region) %>% 
-  dplyr::summarise(Area = mean(Area))
-
-# Join Countries regions
-world_map %>% 
-  dplyr::group_by(Region) %>% 
-  dplyr::select(Region) %>% 
-  plot()
-
-
-
-
-
-data %>% 
-  tidyr::gather()
-  
-  dplyr::left_join(regions) 
-  
-  
-
+# Join SPAM stack and world map 
+region_map %<>% 
+  dplyr::left_join(spam_stack, by = c("Group" = "Group")) %>% 
+  dplyr::select(-stack)
 
 
 
