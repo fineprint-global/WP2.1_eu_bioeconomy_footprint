@@ -71,7 +71,7 @@ region_map %<>%
   tidyr::gather(Group, total_spam, -Region, -geometry) %>% 
   dplyr::filter(Group %in% c("alc", "oil", "ind")) 
 
-# Compute total Footprint by regional and group 
+# Compute total Footprint by region and group 
 region_map <- data %>% 
   dplyr::select(-Item) %>% 
   dplyr::group_by(Region, Group) %>% 
@@ -90,11 +90,12 @@ region_map %<>%
   dplyr::left_join(spam_stack, by = c("Group" = "Group")) %>% 
   dplyr::select(-stack, raster_spam = total) %>% 
   dplyr::rowwise() %>% 
-  dplyr::mutate(mask = mask_regions(x = raster_spam, y = geometry, crs = sf::st_crs(region_map)), raster_footprint = list(mask * scale))
+  dplyr::mutate(mask = mask_regions(x = raster_spam, y = geometry, crs = sf::st_crs(region_map), .pb = dplyr::progress_estimated(length(raster_spam))), 
+                raster_footprint = list(mask * scale))
 
 # Mosaic footprint raster by group
 spatial_footprint <- region_map %>% 
-  dplyr::select(Group, raster_footprint, geometry) %>% 
+  dplyr::select(Group, raster_footprint) %>% 
   dplyr::group_by(Group) %>% 
   dplyr::summarise(footprint_mosaic = list(sum(raster::stack(raster_footprint), na.rm = TRUE))) 
   
@@ -105,7 +106,18 @@ names(spatial_footprint_stack) <- spatial_footprint$Group
 raster::writeRaster(spatial_footprint_stack, filename = "./output/spatial_footprint_stack.tif", overwrite = TRUE)
 
 # PLOT TODO 
-# plot(spatial_footprint_stack, col = RColorBrewer::brewer.pal(n = 9, name = 'YlOrRd'))
+footprint_map <- stars::read_stars("./output/spatial_footprint_stack.tif") %>% 
+  as.data.frame(spatial_footprint_stack) %>% 
+  tibble::as_tibble(w) %>% 
+  dplyr::filter(snl_spam_largest_production.tif > 0) %>% 
+  dplyr::mutate(Product = as.integer(snl_spam_largest_production.tif)) %>% 
+  dplyr::transmute(x = x, y = y, group = 1, Product = factor(x = Product, 
+                                                             levels = products_legend$class_id, 
+                                                             labels = products_legend$Product)) 
+
+
+spatial_footprint_stars <- 
+plot(spatial_footprint_stars, col = RColorBrewer::brewer.pal(n = 9, name = 'YlOrRd'))
 
 
 
