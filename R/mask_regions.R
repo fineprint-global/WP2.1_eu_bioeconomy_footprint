@@ -15,8 +15,8 @@
 mask_regions <- function(x, y, crs, .pb = NULL){
   
   if ((!is.null(.pb)) && inherits(.pb, "Progress") && (.pb$i < .pb$n)){
-    bar_status <- raster::rasterOptions()$progress
-    raster::rasterOptions(progress = NULL)
+    # bar_status <- raster::rasterOptions()$progress
+    raster::rasterOptions(progress = "")
     .pb$tick()$print()
   }
   
@@ -25,7 +25,7 @@ mask_regions <- function(x, y, crs, .pb = NULL){
   
   res <- list(raster::mask(x = x, mask = y))
   
-  raster::rasterOptions(progress = bar_status)
+  # raster::rasterOptions(progress = bar_status)
   
   return(res)
   
