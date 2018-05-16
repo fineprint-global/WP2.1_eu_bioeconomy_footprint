@@ -161,7 +161,8 @@ for(i in 1:4){
     # ggplot2::scale_fill_gradientn(colours=terrain.colors(10), breaks = quantile(footprint_map_total$Area, probs = c(0, 0.25, 1))) +
     # ggplot2::scale_fill_manual(palette = "Greens", breaks = quantile(footprint_map_total$Area)) + 
     # ggplot2::scale_fill_gradient2(name = paste0(letters[i],")\n\n",levels(footprint_map_total$Group)[i],"\n[Area in hectares]"), high = "#084081", low = "#f7fcf0") +
-    ggplot2::scale_fill_gradientn(name = paste0(letters[i],")\n\n",levels(footprint_map_total$Group)[i],"\n[Area in hectares]"), colors = c("#bae4bc", "#56c5b8", "#0096c8", "#0868ac", "#00507d", "#000a32")) +
+    ggplot2::scale_fill_gradientn(name = paste0(letters[i],")\n\n",levels(footprint_map_total$Group)[i],"\n[Area in hectares]"), 
+                                  colors = c("#bae4bc", "#56c5b8", "#0096c8", "#0868ac", "#00507d", "#000a32")) +
     ggplot2::geom_path(data = map_world, mapping = aes(long, lat), colour = "#b5b5b5", size = 0.1) + 
     ggplot2::theme(legend.position = c(0.01, 0.01), plot.margin = grid::unit(c(0,0,0,0), "mm"))
   
