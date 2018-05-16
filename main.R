@@ -132,12 +132,12 @@ map_world <- ggplot2::map_data(map = "world") %>%
 eu_map <- map_world %>% 
   dplyr::filter(Region == 1)
 
-# Filter outliers = 1% highest values
+# Filter outliers = 0.1% highest values
 footprint_map %<>% 
   dplyr::group_by(Group) %>% 
-  dplyr::mutate(max = quantile(Area, probs = c(0.999))) %>% 
-  dplyr::filter(Area < max) %>% 
-  dplyr::select(-max)
+  dplyr::mutate(Area = replace(Area, Area > quantile(Area, probs = c(0.999)), quantile(Area, probs = c(0.999))))
+  # dplyr::mutate(max = quantile(Area, probs = c(0.99))) %>% 
+  # dplyr::select(-max)
 
 # Aggregate all crops
 footprint_map_total <- footprint_map %>% 
@@ -157,10 +157,11 @@ for(i in 1:4){
     ggplot2::coord_quickmap(xlim = c(-160, 175), ylim = c(-55, 80)) +
     ggplot2::geom_tile(data = footprint_map_total[footprint_map_total$Group==levels(footprint_map_total$Group)[i],], aes(x = x, y = y, fill = Area, group = Group)) +
     # ggplot2::facet_wrap(~ Group, ncol = 1) +
-    ggplot2::scale_fill_distiller(name = paste0(letters[i],")\n\n",levels(footprint_map_total$Group)[i],"\n[Area in hectares]"), palette = "YlGnBu", direction = 1) +
+    # ggplot2::scale_fill_distiller(name = paste0(letters[i],")\n\n",levels(footprint_map_total$Group)[i],"\n[Area in hectares]"), palette = "YlGnBu", direction = 1) +
     # ggplot2::scale_fill_gradientn(colours=terrain.colors(10), breaks = quantile(footprint_map_total$Area, probs = c(0, 0.25, 1))) +
     # ggplot2::scale_fill_manual(palette = "Greens", breaks = quantile(footprint_map_total$Area)) + 
-    # ggplot2::scale_fill_gradient2(high = "#238b45", low = "#e5f5e0") +
+    # ggplot2::scale_fill_gradient2(name = paste0(letters[i],")\n\n",levels(footprint_map_total$Group)[i],"\n[Area in hectares]"), high = "#084081", low = "#f7fcf0") +
+    ggplot2::scale_fill_gradientn(name = paste0(letters[i],")\n\n",levels(footprint_map_total$Group)[i],"\n[Area in hectares]"), colors = c("#bae4bc", "#56c5b8", "#0096c8", "#0868ac", "#00507d", "#000a32")) +
     ggplot2::geom_path(data = map_world, mapping = aes(long, lat), colour = "#b5b5b5", size = 0.1) + 
     ggplot2::theme(legend.position = c(0.01, 0.01), plot.margin = grid::unit(c(0,0,0,0), "mm"))
   
@@ -175,9 +176,13 @@ gp_global_map <- ggplot2::ggplot(map_world, aes(x = long, y = lat, group = group
   ggthemes::theme_map() +
   ggplot2::coord_quickmap(xlim = c(-160, 175), ylim = c(-55, 80)) +
   ggplot2::geom_tile(data = footprint_map_total[footprint_map_total$Group==levels(footprint_map_total$Group)[4],], aes(x = x, y = y, fill = Area, group = Group)) +
-  ggplot2::scale_fill_distiller(name = "Area in hectares", palette = "YlGnBu", direction = 1) +
+  # ggplot2::scale_fill_distiller(name = "Area in hectares\nper 5 min grid cell", palette = "YlGnBu", direction = 1) +
+  ggplot2::scale_fill_gradientn(name = "Area in hectares\nper 5 min grid cell", 
+                                colors = c("#bae4bc", "#56c5b8", "#0096c8", "#0868ac", "#00507d", "#000a32")) +
   ggplot2::geom_path(data = map_world, mapping = aes(long, lat), colour = "#b5b5b5", size = 0.1) + 
-  ggplot2::theme(legend.position = c(0.01, 0.01), plot.margin = grid::unit(c(0,0,0,0), "mm"))
+  ggplot2::ggtitle("EU non-food cropland footprint") +
+  ggplot2::theme(legend.position = c(0.01, 0.01), plot.margin = grid::unit(c(0,0,0,0), "mm"), 
+                 plot.title = element_text(lineheight=0, hjust = 0.5, vjust = 0, size = 20))
 
 ggplot2::ggsave(paste0("global_footprint_map_abstract.tif"), plot = gp_global_map, device = "tiff", path = "./output",
                 scale = 1, width = 207, height = 90, units = "mm", dpi = 300)
