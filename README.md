@@ -1,7 +1,7 @@
 # EU Bioeconomy Footprint 
 
 ### Calculations
-To calculate the cropland footprint of the EU non-food bioeconomy, run the script [footprints.R](./footprints.R). All required input data are located in the folder [input](./input).
+To calculate the cropland footprint of the EU non-food bioeconomy, run the script [footprints.R](./footprints.R). The required input data consist of the EXIOBASE MRIO database, which has to be downloaded from www.exiobase.eu in order to run the script, and output files generated with IIASA's LANDFLOW model, which are located in the folder [input](./input).
 
 
 
