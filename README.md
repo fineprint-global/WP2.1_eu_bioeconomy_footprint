@@ -6,3 +6,4 @@ To produce the maps, run the script main.R. The mosaic chart is generated runnin
 
 
 This code is distributed under the GNU General Public License Version 3.
+
