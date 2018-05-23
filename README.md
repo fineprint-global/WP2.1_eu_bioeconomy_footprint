@@ -3,7 +3,7 @@
 ## Calculations
 Calculating the global cropland footprint of the EU non-food bioeconomy
 
-To calculate the cropland footprint of the EU non-food bioeconomy, run the script footprints.R. All required input data are located in the folder `./input` or [./input](../blob/master/input).
+To calculate the cropland footprint of the EU non-food bioeconomy, run the script footprints.R. All required input data are located in the folder `./input` or [./input](./tree/master/input).
 
 
 ## Maps
