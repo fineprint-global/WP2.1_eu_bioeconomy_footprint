@@ -4,27 +4,27 @@ Maize,Maize,alc
 Rice,Rice,alc
 Soybean,Oil crops (primary),oil
 Barley,Other cereals,alc
-Vegetable,"Fruit, vegetables, spices",alc
+Vegetable,"Fruit, vegetables, spices",nec
 Sorghum,Other cereals,alc
 Cotton,Other industrial crops,ind
 Cereals Other,Other cereals,alc
 Rapeseed,Oil crops (primary),oil
 Millet Pearl,Other cereals,alc
-Bean,Roots & Pulses,alc
-Fruit Tropical,"Fruit, vegetables, spices",alc
+Bean,Roots & Pulses,nec
+Fruit Tropical,"Fruit, vegetables, spices",nec
 Rest Of Crops,Rubber,ind
-Fruit Temperate,"Fruit, vegetables, spices",alc
+Fruit Temperate,"Fruit, vegetables, spices",nec
 Sunflower,Oil crops (primary),oil
 Groundnut,Oil crops (primary),oil
 Sugar Cane,Sugar crops (primary),alc
 Potato,Roots & Pulses,alc
 Cassava,Roots & Pulses,alc
 Oil Crops Other,Oil crops (primary),oil
-Pulses Other,Roots & Pulses,alc
+Pulses Other,Roots & Pulses,nec
 Oil Palm,Oil crops (primary),oil
 Coconut,Oil crops (primary),oil
-Chickpea,Roots & Pulses,alc
-Cowpea,Roots & Pulses,alc
+Chickpea,Roots & Pulses,nec
+Cowpea,Roots & Pulses,nec
 Cocoa,Stimulants,nec
 Sweet Potato,Roots & Pulses,alc
 Sesame Seed,Oil crops (primary),oil
@@ -32,12 +32,12 @@ Coffee Arabica,Stimulants,nec
 Sugar Beet,Sugar crops (primary),alc
 Millet Small,Other cereals,alc
 Coffee Robusta,Stimulants,nec
-Banana,"Fruit, vegetables, spices",alc
+Banana,"Fruit, vegetables, spices",nec
 Yam,Roots & Pulses,alc
-Pigeonpea,Roots & Pulses,alc
-Plantain,"Fruit, vegetables, spices",alc
+Pigeonpea,Roots & Pulses,nec
+Plantain,"Fruit, vegetables, spices",nec
 Tobacco,Tobacco,ind
-Lentil,Roots & Pulses,alc
+Lentil,Roots & Pulses,nec
 Fibers Other,Other industrial crops,ind
 Tea,Stimulants,nec
 Roots And Tubers Other,Roots & Pulses,alc

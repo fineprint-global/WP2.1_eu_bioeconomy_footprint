@@ -62,7 +62,7 @@ region_map <- world_map %>%
   dplyr::group_by(Region) %>% 
   dplyr::summarise()
 
-# Comput total SPAM by region and group 
+# Compute total SPAM by region and group 
 spam_total_stack <- raster::stack(spam_stack$total)
 names(spam_total_stack) <- spam_stack$Group
 region_map %<>% 
