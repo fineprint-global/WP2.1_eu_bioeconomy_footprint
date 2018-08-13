@@ -259,29 +259,29 @@ calculate_allocation_shares <- function(years = 1995:2010, nrreg = 21, nrsec = 2
 ##  check for 0 values in the Z & Y shares
 ##########################################################################
 
-rm(list=ls())
-library("openxlsx")
-
-nrinput = 23    # number of input commodities
-nrreg = 20    # number of regions
-years = 1995:2010   # years considered in the analysis
-protocol <- "year;region;input"   # error (zero) protocol
-
-for(year in years){
-  # load Z & Y shares
-  load(paste0("./output/exiobase/",year,"_ZYshares.RData"))
-  
-  for(region in 1:nrreg){
-    
-    for(input in 1:nrinput){
-      
-      if(sum(apply(as.matrix(Zshares[[region]][[input]]),2,as.numeric)) + as.numeric(Yshares[[region]][[input]]) == 0){
-        protocol <- c(protocol,paste0("y",year,";r",region,";i",input))
-      }
-      
-    }
-  }
-}
+# rm(list=ls())
+# library("openxlsx")
+# 
+# nrinput = 23    # number of input commodities
+# nrreg = 20    # number of regions
+# years = 1995:2010   # years considered in the analysis
+# protocol <- "year;region;input"   # error (zero) protocol
+# 
+# for(year in years){
+#   # load Z & Y shares
+#   load(paste0("./output/exiobase/",year,"_ZYshares.RData"))
+#   
+#   for(region in 1:nrreg){
+#     
+#     for(input in 1:nrinput){
+#       
+#       if(sum(apply(as.matrix(Zshares[[region]][[input]]),2,as.numeric)) + as.numeric(Yshares[[region]][[input]]) == 0){
+#         protocol <- c(protocol,paste0("y",year,";r",region,";i",input))
+#       }
+#       
+#     }
+#   }
+# }
 
 write.xlsx(protocol,paste0("./output/exiobase/","Error Protocol.xlsx"))
 
