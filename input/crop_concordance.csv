@@ -1,24 +1,24 @@
 spam_crop,Item,Group
-Wheat,Wheat,alc
+Wheat,Wheat,nec
 Maize,Maize,alc
-Rice,Rice,alc
+Rice,Rice,nec
 Soybean,Oil crops (primary),oil
-Barley,Other cereals,alc
+Barley,Other cereals,nec
 Vegetable,"Fruit, vegetables, spices",nec
-Sorghum,Other cereals,alc
+Sorghum,Other cereals,nec
 Cotton,Other industrial crops,ind
-Cereals Other,Other cereals,alc
+Cereals Other,Other cereals,nec
 Rapeseed,Oil crops (primary),oil
-Millet Pearl,Other cereals,alc
+Millet Pearl,Other cereals,nec
 Bean,Roots & Pulses,nec
 Fruit Tropical,"Fruit, vegetables, spices",nec
-Rest Of Crops,Rubber,ind
+Rest Of Crops,"Spices, nuts, rubber, mate",nec
 Fruit Temperate,"Fruit, vegetables, spices",nec
 Sunflower,Oil crops (primary),oil
 Groundnut,Oil crops (primary),oil
 Sugar Cane,Sugar crops (primary),alc
-Potato,Roots & Pulses,alc
-Cassava,Roots & Pulses,alc
+Potato,Roots & Pulses,nec
+Cassava,Roots & Pulses,nec
 Oil Crops Other,Oil crops (primary),oil
 Pulses Other,Roots & Pulses,nec
 Oil Palm,Oil crops (primary),oil
@@ -26,18 +26,18 @@ Coconut,Oil crops (primary),oil
 Chickpea,Roots & Pulses,nec
 Cowpea,Roots & Pulses,nec
 Cocoa,Stimulants,nec
-Sweet Potato,Roots & Pulses,alc
+Sweet Potato,Roots & Pulses,nec
 Sesame Seed,Oil crops (primary),oil
 Coffee Arabica,Stimulants,nec
-Sugar Beet,Sugar crops (primary),alc
-Millet Small,Other cereals,alc
+Sugar Beet,Sugar crops (primary),nec
+Millet Small,Other cereals,nec
 Coffee Robusta,Stimulants,nec
 Banana,"Fruit, vegetables, spices",nec
-Yam,Roots & Pulses,alc
+Yam,Roots & Pulses,nec
 Pigeonpea,Roots & Pulses,nec
 Plantain,"Fruit, vegetables, spices",nec
-Tobacco,Tobacco,ind
+Tobacco,Tobacco,nec
 Lentil,Roots & Pulses,nec
 Fibers Other,Other industrial crops,ind
 Tea,Stimulants,nec
-Roots And Tubers Other,Roots & Pulses,alc
+Roots And Tubers Other,Roots & Pulses,nec

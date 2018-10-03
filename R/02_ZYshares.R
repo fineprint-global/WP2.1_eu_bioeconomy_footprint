@@ -282,7 +282,7 @@ calculate_allocation_shares <- function(years = 1995:2010, nrreg = 21, nrsec = 2
 #     }
 #   }
 # }
-
-write.xlsx(protocol,paste0("./output/exiobase/","Error Protocol.xlsx"))
+# 
+# write.xlsx(protocol,paste0("./output/exiobase/","Error Protocol.xlsx"))
 
 

@@ -146,7 +146,7 @@ footprint_map_total <- footprint_map %>%
   dplyr::summarise(Group = 4, Area = sum(Area)) %>% 
   dplyr::bind_rows(footprint_map, .) %>%
   dplyr::ungroup() %>% 
-  dplyr::mutate(Group = factor(Group, levels = c(1,3,2,4), labels = c("Ethanol crops", "Oilseeds", "Industrial crops", "Total"), ordered = TRUE))
+  dplyr::mutate(Group = factor(Group, levels = c(1,3,2,4), labels = c("Maize and sugarcane", "Oil crops", "Fibre crops", "Total"), ordered = TRUE))
 
 # Plot map layers background+products+borders
 for(i in 1:4){
@@ -168,6 +168,8 @@ for(i in 1:4){
   
   ggplot2::ggsave(paste0("global_footprint_map_",levels(footprint_map_total$Group)[i],".tif"), plot = gp_global_map, device = "tiff", path = "./output",
                   scale = 1, width = 207, height = 90, units = "mm", dpi = 300)
+  ggplot2::ggsave(paste0("global_footprint_map_",levels(footprint_map_total$Group)[i],".png"), plot = gp_global_map, device = "png", path = "./output",
+                  scale = 1, width = 207, height = 90, units = "mm", dpi = 300)
 }
 
 # Plot map for the graphical abstract
@@ -186,4 +188,6 @@ gp_global_map <- ggplot2::ggplot(map_world, aes(x = long, y = lat, group = group
                  plot.title = element_text(lineheight=0, hjust = 0.5, vjust = 0, size = 20))
 
 ggplot2::ggsave(paste0("global_footprint_map_abstract.tif"), plot = gp_global_map, device = "tiff", path = "./output",
+                scale = 1, width = 207, height = 90, units = "mm", dpi = 300)
+ggplot2::ggsave(paste0("global_footprint_map_abstract.png"), plot = gp_global_map, device = "png", path = "./output",
                 scale = 1, width = 207, height = 90, units = "mm", dpi = 300)

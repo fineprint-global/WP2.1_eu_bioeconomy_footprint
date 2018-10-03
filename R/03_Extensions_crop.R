@@ -19,8 +19,8 @@
 
 prepare_mrio_extensions_crop <- function(years = 1995:2010, nrreg = 21, nrsec = 200, nrinput = 17, ...){
 
-  library(openxlsx)
-  library(reshape2)
+  require(openxlsx)
+  require(reshape2)
   
   # Read input data generated with IIASA's LANDFLOW model
   data <- read.xlsx(paste0("./input/LANDFLOW_Crop_v4_28Jun2015_final.xlsx"), sheet = 5, startRow = 1, colNames = TRUE, rowNames = FALSE)
