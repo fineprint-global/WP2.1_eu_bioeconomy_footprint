@@ -22,15 +22,18 @@ mosaic <-
   theme(legend.position="right") + 
   theme_bw() +
   scale_y_continuous(labels = scales::percent) + 
+  # scale_x_continuous(labels = scales::percent) + 
   # facet_grid(Group~.) +
-  labs(x = "", y = "Share per commodity group") + 
+  labs(x = "Share per region", y = "Share per commodity group") + 
   guides(fill=guide_legend(title = "Commodities", reverse = TRUE)) +
   scale_fill_manual(values = mycols)
 
+# debugonce(geom_text)
 mosaic <- mosaic + 
   geom_text(data = ggplot_build(mosaic)$data[[1]], aes(x = (xmin+xmax)/2, y = (ymin+ymax)/2, label=replace(.wt, .wt < 300, "")))
 
 ggplot2::ggsave(paste0("EU_footprint_mosaic.tif"), plot = mosaic, device = "tiff", path = "./output/",
                 scale = 1, width = 200, height = 150, units = "mm", dpi = 300)
+
 
 

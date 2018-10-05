@@ -30,7 +30,7 @@ regions %<>%
   tidyr::unnest()
 
 # Get MapSPAM data
-spam_data <- download_process_spam(output_dir = "./output", layer = "physical-area")
+spam_data <- download_process_spam(output_dir = "./output", layer = "harvested-area")
 
 # Get poligon world map
 world_map = st_as_sf(map('world', plot = FALSE, fill = TRUE))
