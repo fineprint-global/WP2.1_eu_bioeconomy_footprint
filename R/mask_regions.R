@@ -14,19 +14,12 @@
 #' 
 mask_regions <- function(x, y, crs, .pb = NULL){
   
-  if ((!is.null(.pb)) && inherits(.pb, "Progress") && (.pb$i < .pb$n)){
-    # bar_status <- raster::rasterOptions()$progress
-    raster::rasterOptions(progress = "")
-    .pb$tick()$print()
-  }
+  if ((!is.null(.pb)) && inherits(.pb, "Progress") && (.pb$i < .pb$n)) .pb$tick()$print()
   
   y <- sf::st_sfc(y, crs = crs) %>% 
     as("Spatial")
   
-  res <- list(raster::mask(x = x, mask = y))
-  
-  # raster::rasterOptions(progress = bar_status)
-  
-  return(res)
+  raster::rasterOptions(progress = "")  
+  raster::mask(x = x, mask = y)
   
 }
