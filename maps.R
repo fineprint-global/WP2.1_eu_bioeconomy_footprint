@@ -181,7 +181,21 @@ for(i in 1:3){
   ggplot2::ggsave(paste0("global_footprint_map_",levels(footprint_map_total$Group)[i],".png"), plot = gp_global_map, device = "png", path = "./output",
                   scale = 1, width = 207, height = 90, units = "mm", dpi = 300)
   
-
+  # viridis colours 
+  gp_global_map <- ggplot2::ggplot(map_world, aes(x = long, y = lat, group = group)) + 
+    ggplot2::geom_polygon(fill = "#ececec") +
+    ggplot2::geom_polygon(data = eu_map, mapping = aes(x = long, y = lat, group = group), fill = "Grey") +
+    ggthemes::theme_map() +
+    ggplot2::coord_quickmap(xlim = c(-160, 175), ylim = c(-55, 80)) +
+    ggplot2::geom_tile(data = footprint_map_total[footprint_map_total$Group==levels(footprint_map_total$Group)[i],], aes(x = x, y = y, fill = Area, group = Group)) +
+    viridis::scale_fill_viridis(option = viridis_colors[[i]], direction = -1, name = paste0(letters[i],")\n\n",levels(footprint_map_total$Group)[i],"\n[Area in hectares]")) + 
+    ggplot2::geom_path(data = map_world, mapping = aes(long, lat), colour = "#b5b5b5", size = 0.1) + 
+    ggplot2::theme(legend.position = c(0.01, 0.01), plot.margin = grid::unit(c(0,0,0,0), "mm"))
+  
+  ggplot2::ggsave(paste0("global_footprint_map_viridis_",levels(footprint_map_total$Group)[i],".tif"), plot = gp_global_map, device = "tiff", path = "./output",
+                  scale = 1, width = 207, height = 90, units = "mm", dpi = 300)
+  ggplot2::ggsave(paste0("global_footprint_map_viridis_",levels(footprint_map_total$Group)[i],".png"), plot = gp_global_map, device = "png", path = "./output",
+                  scale = 1, width = 207, height = 90, units = "mm", dpi = 300)
   
 }
 
