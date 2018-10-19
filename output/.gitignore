@@ -1,2 +1,5 @@
-*.tiff
 *.tif
+exiobase
+old
+unicolor
+*.db

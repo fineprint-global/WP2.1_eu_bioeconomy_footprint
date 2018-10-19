@@ -8,7 +8,8 @@ library(ggmosaic)
 data <- readr::read_csv(file = "./input/data_mosaic_agg.csv")
 data %<>% 
   tidyr::gather(key = Region, value = value, -Group, -Item) %>% 
-  dplyr::mutate(Item = factor(Item, levels = unique(Item)), Region = factor(Region, levels = unique(Region)))
+  dplyr::mutate(Item = factor(Item, levels = unique(Item)), 
+                Region = factor(Region, levels = unique(Region)))
 
 mycols=c("dodgerblue2", "#E31A1C", "green4", "#6A3D9A", "#FF7F00", "black",
          "gold1", "skyblue2", "#FB9A99", "palegreen2", "maroon", "#CAB2D6", "orchid1", "deeppink1", "blue1",
@@ -16,11 +17,11 @@ mycols=c("dodgerblue2", "#E31A1C", "green4", "#6A3D9A", "#FF7F00", "black",
          "darkorange4", "brown")
 
 # data$Region = as.character(data$Region)
-
+# rm(scale_x_productlist)
 scale_x_productlist <- function (name = waiver(), breaks = ggmosaic:::product_breaks(), minor_breaks = NULL, 
-          labels = ggmosaic:::product_labels(), limits = NULL, expand = waiver(), 
-          oob = scales:::censor, na.value = NA_real_, trans = "identity", 
-          position = "bottom", sec.axis = waiver()) 
+                                 labels = ggmosaic:::product_labels(), limits = NULL, expand = waiver(), 
+                                 oob = scales:::censor, na.value = NA_real_, trans = "identity", 
+                                 position = "bottom", sec.axis = waiver()) 
 {
   sc <- ggplot2::continuous_scale(c("x", "xmin", "xmax", "xend", 
                                     "xintercept", "xmin_final", "xmax_final", "xlower", 
@@ -47,6 +48,7 @@ breaks_values <- data %>%
   dplyr::mutate(value = cumsum(value) )
 
 # debugonce(check_breaks_labels)
+# debugonce(geom_mosaic)
 mosaic <-
   ggplot(data = data) + 
   geom_mosaic(aes(weight = value, x = product(Item, Region), fill = Item), na.rm=T, divider=ddecker(), offset = 0.005) +
@@ -58,7 +60,8 @@ mosaic <-
   # facet_grid(Group~.) +
   labs(x = "", y = "Share per commodity group") + 
   guides(fill=guide_legend(title = "Commodities", reverse = TRUE)) +
-  scale_fill_manual(values = mycols) 
+  # viridis::scale_fill_viridis(option = "magma", discrete = TRUE)
+  scale_fill_manual(values = mycols)
 
 
 # debugonce(geom_text)
