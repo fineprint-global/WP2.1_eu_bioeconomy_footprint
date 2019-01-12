@@ -1,0 +1,101 @@
+ From.Region ; To.Region ; Value 
+EU-28;EU-28;15448
+USA;EU-28;1566
+Brazil;EU-28;128
+China;EU-28;4373
+India;EU-28;739
+Indonesia;EU-28;300
+Rest of Europe;EU-28;1015
+Rest of Asia-Pacific;EU-28;3190
+Rest of America;EU-28;493
+Africa;EU-28;944
+EU-28;USA;1226
+USA;USA;17259
+Brazil;USA;220
+China;USA;861
+India;USA;677
+Indonesia;USA;621
+Rest of Europe;USA;372
+Rest of Asia-Pacific;USA;2214
+Rest of America;USA;1612
+Africa;USA;600
+EU-28;Brazil;57
+USA;Brazil;225
+Brazil;Brazil;8232
+China;Brazil;244
+India;Brazil;68
+Indonesia;Brazil;27
+Rest of Europe;Brazil;29
+Rest of Asia-Pacific;Brazil;249
+Rest of America;Brazil;103
+Africa;Brazil;65
+EU-28;China;862
+USA;China;208
+Brazil;China;109
+China;China;23812
+India;China;221
+Indonesia;China;303
+Rest of Europe;China;332
+Rest of Asia-Pacific;China;1102
+Rest of America;China;256
+Africa;China;466
+EU-28;India;114
+USA;India;114
+Brazil;India;12
+China;India;300
+India;India;7886
+Indonesia;India;83
+Rest of Europe;India;78
+Rest of Asia-Pacific;India;413
+Rest of America;India;75
+Africa;India;145
+EU-28;Indonesia;29
+USA;Indonesia;37
+Brazil;Indonesia;3
+China;Indonesia;147
+India;Indonesia;25
+Indonesia;Indonesia;5124
+Rest of Europe;Indonesia;12
+Rest of Asia-Pacific;Indonesia;269
+Rest of America;Indonesia;11
+Africa;Indonesia;20
+EU-28;Rest of Europe;361
+USA;Rest of Europe;238
+Brazil;Rest of Europe;18
+China;Rest of Europe;660
+India;Rest of Europe;114
+Indonesia;Rest of Europe;57
+Rest of Europe;Rest of Europe;8336
+Rest of Asia-Pacific;Rest of Europe;669
+Rest of America;Rest of Europe;71
+Africa;Rest of Europe;132
+EU-28;Rest of Asia-Pacific;890
+USA;Rest of Asia-Pacific;1115
+Brazil;Rest of Asia-Pacific;131
+China;Rest of Asia-Pacific;1375
+India;Rest of Asia-Pacific;564
+Indonesia;Rest of Asia-Pacific;897
+Rest of Europe;Rest of Asia-Pacific;477
+Rest of Asia-Pacific;Rest of Asia-Pacific;19550
+Rest of America;Rest of Asia-Pacific;489
+Africa;Rest of Asia-Pacific;633
+EU-28;Rest of America;266
+USA;Rest of America;1718
+Brazil;Rest of America;240
+China;Rest of America;622
+India;Rest of America;182
+Indonesia;Rest of America;88
+Rest of Europe;Rest of America;104
+Rest of Asia-Pacific;Rest of America;794
+Rest of America;Rest of America;8733
+Africa;Rest of America;185
+EU-28;Africa;539
+USA;Africa;377
+Brazil;Africa;72
+China;Africa;946
+India;Africa;527
+Indonesia;Africa;267
+Rest of Europe;Africa;367
+Rest of Asia-Pacific;Africa;1286
+Rest of America;Africa;205
+Africa;Africa;18258
